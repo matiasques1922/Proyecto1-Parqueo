@@ -155,3 +155,31 @@ int main() {
 	system("pause");
 	return 0;
 }
+
+
+//while (letra == 's') {
+//	cout << "-------------INGRESANDO PERSONA---------------------" << endl;
+//	cout << endl;
+//	cout << "Ingrese su cedula...";
+//	cin >> ced;
+//	cout << "Ingrese su nombre...";
+//	cin >> nom;
+//	cout << "Ingrese su edad...";
+//	cin >> ed;
+//	per = new Persona(ced, nom, ed); 
+//
+//
+//
+//	if (CO.ingresarPersona(per)) 
+//		cout << "Si, si se pudo ingresar la persona." << endl;
+//	else
+//		cout << "No, no se pudo ingresar la persona." << endl;
+//	cout << endl;
+//	cout << "Desea seguir ingresando personas.....s/n ?...";
+//	cin >> letra;
+//}
+//
+//
+//
+//
+//cout << CO.toString() << endl;
