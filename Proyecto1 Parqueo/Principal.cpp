@@ -12,20 +12,12 @@ int main() {
 	int tam = 0;
 	int cant = 0;
 	int op = 0;
+	InfoDelCampo* infoPtr = new InfoDelCampo();
 
-
-		cout << "------------Creacion del Mall y su Parqueo-----------" << endl;
-		cout << "------------------------------------------------------" << endl << endl;
-		cout << "Ingrese el nombre del Mall: ";
-		cin >> nombre;
-		cout << "Ingrese el numero telefonico del Mall: ";
-		cin >> numero;
-		cout << "Ingrese la direccion fisica del Mall: ";
-		cin >> direccion;
-		cout << "Ingrese el numero de campos que tendra el parqueo del Mall: ";
-		cin >> tam;
+		
+		
 		Parqueo* parqueoPtr = new Parqueo(tam);
-		cout << "Cuantos y cuales espacios estaran en mantenimiento 'M': " << endl;
+		parqueoPtr->mantenimiento();
 	
 	do {
 		system("cls");
@@ -176,6 +168,7 @@ int main() {
 		}
 	} while (op != 19);
 	delete parqueoPtr;
+	delete infoPtr;
 	system("pause");
 	return 0;
 }
