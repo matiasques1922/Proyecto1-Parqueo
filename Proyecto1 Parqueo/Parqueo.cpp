@@ -15,6 +15,15 @@ Parqueo:: ~Parqueo() {
 int Parqueo::getCant() { return cant; }
 int Parqueo::getTam() { return tam; }
 
+
+void Parqueo::creaParqueo() {
+	/*La aplicación automáticamente cuando “arranca”, solicitará el nombre, el teléfono y la
+		dirección física del Mall Multiplaza Escazú, (lo anterior es opcional), además solicitará el
+		número n de campos que tiene el parqueo*/
+	
+
+}
+
 string Parqueo::toString() {
 	stringstream s;
 	s << "-------------PARQUEO----------------" << endl;

@@ -6,6 +6,7 @@ private:
 	InfoDelCampo** vecP;
 	int cant;
 	int tam;
+	
 public:
 	Parqueo(int n);
 	virtual ~Parqueo();
@@ -13,7 +14,10 @@ public:
 	int getCant();
 	int getTam();
 	
+
 	string toString();
+
+	void creaParqueo();
 
 };
 

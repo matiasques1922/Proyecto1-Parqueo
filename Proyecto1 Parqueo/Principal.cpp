@@ -1,9 +1,33 @@
 #include <iostream>
 #include <sstream>
+#include"Parqueo.h"
 using namespace std;
 
 
+
 int main() {
+	string nombre;
+	string numero;
+	string direccion;
+	int tam;
+	int cant;
+	char letra = 'n';
+	while (letra == 'n') {
+
+		cout << "------------Ingreso de Informacion del MALL-----------" << endl;
+		cout << "------------------------------------------------------" << endl << endl;
+		cout << "Ingrese el nombre del Mall: ";
+		cin >> nombre;
+		cout << "Ingrese el numero telefonico del Mall: ";
+		cin >> numero;
+		cout << "Ingrese la direccion fisica del Mall: ";
+		cin >> direccion;
+		cout << "Ingrese el numero de campos que tendra el parqueo del Mall: ";
+		cin >> tam;
+		Parqueo CO(tam);
+		cout << "Desea ingresar al menu.....s/n ?...";
+		cin >> letra;
+	}
 	int op = 0;
 	do {
 		cout << "-------------------------------------MENU----------------------------------------" << endl;
