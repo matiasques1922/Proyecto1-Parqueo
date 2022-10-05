@@ -17,8 +17,8 @@ public:
 
 	string toString();
 
-	void mantenimiento();
-	
+	void creaParqueo();
+	void creaVehiculo();
 
 };
 

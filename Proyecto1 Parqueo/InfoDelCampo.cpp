@@ -23,6 +23,15 @@ void InfoDelCampo::setNumeroCampo(int nC) { numeroCampo = nC; }
 void InfoDelCampo::setEstado(char e) { estado = e; }
 void InfoDelCampo::setContVehiculos(ContVehiculos* cPtr) { contPtr = cPtr; }
 
+//void InfoDelCampo::ingresaContenedor(ContVehiculos* contPtr) {
+//	if (cant < tam) {
+//		vec[cant++] = vehiculoPtr;
+//		return true;
+//	}
+//	else
+//		return false;
+//}
+
 string InfoDelCampo::toString(){
 	stringstream s;
 	s << "------------Informacion del campo-------------" << endl

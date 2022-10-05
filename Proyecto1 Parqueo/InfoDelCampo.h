@@ -20,6 +20,8 @@ public:
 	void setEstado(char);
 	void setContVehiculos(ContVehiculos*);
 
+	//void InfoDelCampo::ingresaContenedor(ContVehiculos*);
+
 	string toString();
 	
 

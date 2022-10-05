@@ -17,11 +17,16 @@ int Parqueo::getCant() { return cant; }
 int Parqueo::getTam() { return tam; }
 
 
-void Parqueo::mantenimiento() {
+void Parqueo:: creaParqueo() {
 	char letra;
 	string nombre;
 	string numero;
 	string direccion;
+	
+	char estado = 'L';
+	int numeroCampo = 0;
+	int mantenimiento;
+	ContVehiculos* contPtr = new ContVehiculos();
 	
 	cout << "------------Creacion del Mall y su Parqueo-----------" << endl;
 	cout << "------------------------------------------------------" << endl << endl;
@@ -34,17 +39,88 @@ void Parqueo::mantenimiento() {
 	cout << "Ingrese el numero de campos que tendra el parqueo del Mall: ";
 	cin >> tam;
 	Parqueo* parqueoPtr = new Parqueo(tam);
-		for (int i = 0; i < tam; i++) {
-			
-			cout << "Desea colocar el campo numero: " << vecP[i]->getNumeroCampo() << " en mantenimiento? s/n";
-			cin >> letra;
-			if (letra == 's') {
-				vecP[i]->setEstado('M');
-				cout << "El campo: " << vecP[i]->getNumeroCampo() << " se coloco en mantenimiento" << endl;
-			}
-		}
+	cout << parqueoPtr->toString() << endl;
+	
+	cout << "Cuantos de los " << tam << "campos estaran en mantenimiento?";
+	cin >> mantenimiento;
 	
 }
+
+//metodo que me estoy inventando porque estoy fliping
+void Parqueo::creaVehiculo() {
+	int hora, horaS;
+	string cedula;
+	string nombre;
+	double total = 0;
+	string marca;
+	string placa;
+	double tonelaje;
+	string color;
+	int cant2;
+	int tam2;
+	int numeroCampo;
+	char estado = 'L';
+	char letra = 's';
+
+	Hora* horaPtr;
+	HoraS* horaSPtr;
+	Chofer* chofPtr;
+	Cobro* cobroPtr;
+	Vehiculo* vehiPtr;
+	ContVehiculos* contPtr = new ContVehiculos();
+
+	//A QUE POSICION SE QUIERE INGRESAR EL VEHICULO??????
+	
+
+
+	/*while (letra == 's') {*/
+		cout << "Tamano del parqueo: " << tam << " campos" << endl;
+		
+		cout << "-----------Ingreso de vehiculos-----------" << endl;
+		cout << "------------------------------------------" << endl;
+		cout << endl;
+		cout << "Ingresando horas..." << endl;
+		cout << "Ingrese la hora de llegada: ";
+		cin >> hora;
+		horaPtr = new Hora(hora);
+		cout << endl;
+		cout << "Ingrese la hora de salida: ";
+		cin >> horaS;
+		horaSPtr = new HoraS(horaS);
+		cout << endl;
+		cout << "Ingresando informacion del chofer..." << endl;
+		cout << "Ingrese la cedula del chofer: ";
+		cin >> cedula;
+		cout << "Ingrese el nombre del chofer: ";
+		cin >> nombre;
+		chofPtr = new Chofer(cedula, nombre);
+		cout << endl;
+		//Cobro
+		cobroPtr = new Cobro(horaPtr, horaSPtr, total);
+		//
+		cout << "Ingresando la informacion del vehiculo..." << endl;
+		cout << "Ingrese la marca del vehiculo: ";
+		cin >> marca;
+		cout << "Ingrese la placa del vehiculo: ";
+		cin >> placa;
+		cout << "Ingrese el tonelaje del vehiculo: ";
+		cin >> tonelaje;
+		cout << "Ingrese el color del vehiculo: ";
+		cin >> color;
+		vehiPtr = new Vehiculo(marca, placa, tonelaje, color, chofPtr, cobroPtr);
+
+		if (contPtr->ingresaVehiculo(vehiPtr))
+			cout << "El vehiculo se ingreso con exito" << endl;
+		else
+			cout << "No se ingreso el vehiculo" << endl;
+		system("pause");
+		
+		/*cout << "Desea ingresar otro vehiculo al sistema? s/n";
+		cin >> letra;*/
+	}
+
+
+
 
 
 string Parqueo::toString() {

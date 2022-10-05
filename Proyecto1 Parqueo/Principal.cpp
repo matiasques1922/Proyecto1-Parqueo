@@ -17,7 +17,10 @@ int main() {
 		
 		
 		Parqueo* parqueoPtr = new Parqueo(tam);
-		parqueoPtr->mantenimiento();
+		parqueoPtr->creaParqueo();
+		parqueoPtr->creaVehiculo();
+
+		
 	
 	do {
 		system("cls");
@@ -54,7 +57,7 @@ int main() {
 		}
 		case 2: {
 			system("cls");
-
+			
 			system("pause");
 			break;
 		}
