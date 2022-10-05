@@ -9,12 +9,12 @@ int main() {
 	string nombre;
 	string numero;
 	string direccion;
-	int tam;
-	int cant;
-	char letra = 'n';
-	while (letra == 'n') {
+	int tam = 0;
+	int cant = 0;
+	int op = 0;
 
-		cout << "------------Ingreso de Informacion del MALL-----------" << endl;
+
+		cout << "------------Creacion del Mall y su Parqueo-----------" << endl;
 		cout << "------------------------------------------------------" << endl << endl;
 		cout << "Ingrese el nombre del Mall: ";
 		cin >> nombre;
@@ -24,12 +24,11 @@ int main() {
 		cin >> direccion;
 		cout << "Ingrese el numero de campos que tendra el parqueo del Mall: ";
 		cin >> tam;
-		Parqueo CO(tam);
-		cout << "Desea ingresar al menu.....s/n ?...";
-		cin >> letra;
-	}
-	int op = 0;
+		Parqueo* parqueoPtr = new Parqueo(tam);
+		cout << "Cuantos y cuales espacios estaran en mantenimiento 'M': " << endl;
+	
 	do {
+		system("cls");
 		cout << "-------------------------------------MENU----------------------------------------" << endl;
 		cout << "1. Ver TODOS los campos del parqueo, (solo lugar, estado y placa)" << endl;
 		cout << "2. Ver solo los campos que están OCUPADOS. (solo lugar, estado y placa)" << endl;
@@ -57,7 +56,7 @@ int main() {
 		switch (op) {
 		case 1: {
 			system("cls");
-
+			cout << parqueoPtr->toString() << endl;
 			system("pause");
 			break;
 		}
@@ -176,6 +175,7 @@ int main() {
 		
 		}
 	} while (op != 19);
+	delete parqueoPtr;
 	system("pause");
 	return 0;
 }

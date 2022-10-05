@@ -3,17 +3,19 @@
 Parqueo::Parqueo(int n) {
 	vecP = new InfoDelCampo * [n];
 	cant = 0;
-	tam = 0;
+	tam = n;
 	for (int i = 0; i < n; i++)
 		vecP[i] = NULL;
 }
 Parqueo:: ~Parqueo() {
-	if (vecP != NULL)
-		delete vecP;
+	for (int i = 0; i < cant; i++)
+		delete vecP[i];
+	delete[] vecP;
 }
 
 int Parqueo::getCant() { return cant; }
 int Parqueo::getTam() { return tam; }
+
 
 
 void Parqueo::creaParqueo() {
@@ -26,7 +28,8 @@ void Parqueo::creaParqueo() {
 
 string Parqueo::toString() {
 	stringstream s;
-	s << "-------------PARQUEO----------------" << endl;
+	s << "-------------PARQUEO----------------" << endl
+		<< "Tamano del parqueo: " << tam << endl;
 	for (int i = 0; i < cant; i++)
 		s << vecP[i]->toString() << endl;
 	return s.str();
