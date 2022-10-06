@@ -108,12 +108,14 @@ void Parqueo::creaVehiculo() {
 		cout << "Ingrese el color del vehiculo: ";
 		cin >> color;
 		vehiPtr = new Vehiculo(marca, placa, tonelaje, color, chofPtr, cobroPtr);
+		vehiPtr->realizarCobro(horaPtr, horaSPtr);
 
 		if (contPtr->ingresaVehiculo(vehiPtr))
 			cout << "El vehiculo se ingreso con exito" << endl;
 		else
 			cout << "No se ingreso el vehiculo" << endl;
 		system("pause");
+		InfoDelCampo* infoPtr = new InfoDelCampo();
 		
 		/*cout << "Desea ingresar otro vehiculo al sistema? s/n";
 		cin >> letra;*/

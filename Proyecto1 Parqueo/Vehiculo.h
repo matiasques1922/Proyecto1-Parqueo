@@ -28,6 +28,8 @@ public:
 	void setChofer(Chofer*);
 	void setCobro(Cobro*);
 
+	void realizarCobro(Hora*, HoraS*);
+
 	string toString();
 
 };

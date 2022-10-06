@@ -19,7 +19,7 @@ int main() {
 		Parqueo* parqueoPtr = new Parqueo(tam);
 		parqueoPtr->creaParqueo();
 		parqueoPtr->creaVehiculo();
-
+	
 		
 	
 	do {

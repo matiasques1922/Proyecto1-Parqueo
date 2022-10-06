@@ -37,13 +37,3 @@ string Cobro::toString() {
 	return s.str();
 } 
 
-void Cobro::realizarCobro() {
-	/*Si el vehículo es menor de una tonelada, solo pagará las horas que estuvo en el parqueo.
-		• Si el vehículo está entre 1.0 y 1.5 toneladas, se le cobrará un 5 % más en la factura final
-		• Si el vehículo está entre 1.6 y 3.5 toneladas, se le cobrará un 10 % más en la factura final
-		• Si el vehículo está entre 3.6 y 5.0 toneladas, se le cobrará un 15 % más en la factura final
-		• Si el vehículo tiene un peso mayor de 5.0 toneladas, se le cobrará un 20 % más en la factura
-		final.*/
-
-
-}

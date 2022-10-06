@@ -24,6 +24,6 @@ public:
 
 	string toString();
 
-	void realizarCobro();
+	
 };
 
