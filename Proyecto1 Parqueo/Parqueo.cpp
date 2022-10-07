@@ -68,8 +68,6 @@ void Parqueo::case4() {
 
 	//A QUE POSICION SE QUIERE INGRESAR EL VEHICULO??????
 
-	cout << "Tamano del parqueo: " << tam << " campos" << endl;
-
 	cout << "-----------Ingreso de vehiculos-----------" << endl;
 	cout << "------------------------------------------" << endl;
 	cout << endl;
