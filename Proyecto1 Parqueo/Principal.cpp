@@ -12,13 +12,47 @@ int main() {
 	int tam = 0;
 	int cant = 0;
 	int op = 0;
-	InfoDelCampo* infoPtr = new InfoDelCampo();
+	char mantenimiento;
 
+	cout << "------------Creacion del Mall y su Parqueo-----------" << endl;
+	cout << "------------------------------------------------------" << endl << endl;
+	cout << "Ingrese el nombre del Mall: ";
+	cin >> nombre;
+	cout << "Ingrese el numero telefonico del Mall: ";
+	cin >> numero;
+	cout << "Ingrese la direccion fisica del Mall: ";
+	cin >> direccion;
+	cout << "Ingrese el numero de campos que tendra el parqueo del Mall: ";
+	cin >> tam;
+	
+	Parqueo* parqueoPtr = new Parqueo(tam);
+
+	cout << endl;
+	cout << "Se creo un parqueo con: " << tam << " campos" << endl;
+	cout << endl;
+
+	for (int i = 0; i < tam; i++) {
 		
+		parqueoPtr->getVec(i)->setNumeroCampo(i+1);
+		cout << "---Colocando campo numero: " << parqueoPtr->getVec(i)->getNumeroCampo() << " en mantenimiento---" << endl;
+		cout << "------------------------------------------------" << endl << endl;
+		cout << "Desea que el campo este en mantenimiento? s/n : ";
+		cin >> mantenimiento;
+		if (mantenimiento == 's') {
+			parqueoPtr->getVec(i)->setEstado('M');
+			cout << "Campo colocado en mantenimiento" << endl;
+			cout << endl;
+		}
+		else {
+			parqueoPtr->getVec(i)->setEstado('L');
+			cout << "Campo colocado como libre" << endl;
+			cout << endl;
+		}
+	}
+	system("pause");
+
+	
 		
-		Parqueo* parqueoPtr = new Parqueo(tam);
-		parqueoPtr->creaParqueo();
-		parqueoPtr->creaVehiculo();
 	
 		
 	
@@ -38,7 +72,7 @@ int main() {
 		cout << "11. Saber la cantidad de vehículos que han ingresado en el día." << endl;
 		cout << "12. Saber la cantidad de dinero que ha ingresado al parqueo este día." << endl;
 		cout << "13. Saber la cantidad de dinero que ha ingresado, por un solo campo." << endl;
-		cout << "14. Saber le tonelaje de los vehículos que hacen más uso del parqueo." << endl;
+		cout << "14. Saber el tonelaje de los vehículos que hacen más uso del parqueo." << endl;
 		cout << "15. Saber el porcentaje de ocupación que tiene el parqueo." << endl;
 		cout << "16. Mostrar la información de los vehículos que han estado en un determinado campo." << endl;
 		cout << "17. Mostar la información de todos(que estén o no) los vehículos del parqueo." << endl;
@@ -51,25 +85,25 @@ int main() {
 		switch (op) {
 		case 1: {
 			system("cls");
-			cout << parqueoPtr->toString() << endl;
+			cout << parqueoPtr->case1() << endl;
 			system("pause");
 			break;
 		}
 		case 2: {
 			system("cls");
-			
+			cout << parqueoPtr->case2() << endl;
 			system("pause");
 			break;
 		}
 		case 3: {
 			system("cls");
-
+			cout << parqueoPtr->case3() << endl;
 			system("pause");
 			break;
 		}
 		case 4: {
 			system("cls");
-
+			parqueoPtr->creaVehiculo();
 			system("pause");
 			break;
 		}
@@ -81,7 +115,7 @@ int main() {
 		}
 		case 6: {
 			system("cls");
-
+			cout << parqueoPtr->case6() << endl;
 			system("pause");
 			break;
 		}
@@ -153,7 +187,7 @@ int main() {
 		}
 		case 18: {
 			system("cls");
-
+			cout << parqueoPtr->toString() << endl;
 			system("pause");
 			break;
 		}
@@ -171,7 +205,7 @@ int main() {
 		}
 	} while (op != 19);
 	delete parqueoPtr;
-	delete infoPtr;
+	
 	system("pause");
 	return 0;
 }

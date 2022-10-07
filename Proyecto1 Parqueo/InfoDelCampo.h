@@ -20,7 +20,11 @@ public:
 	void setEstado(char);
 	void setContVehiculos(ContVehiculos*);
 
-	//void InfoDelCampo::ingresaContenedor(ContVehiculos*);
+	bool ingresaContenedor(Vehiculo*);
+	string case1();
+	string case2();
+	string case3();
+	string case6();
 
 	string toString();
 	

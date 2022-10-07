@@ -29,6 +29,10 @@ public:
 	void setCobro(Cobro*);
 
 	void realizarCobro(Hora*, HoraS*);
+	string case1();
+	string case2();
+	string case3();
+	string case6();
 
 	string toString();
 

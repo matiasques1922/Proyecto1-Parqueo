@@ -13,6 +13,10 @@ public:
 	virtual ~ContVehiculos();
 
 	bool ingresaVehiculo(Vehiculo*);
+	string case1();
+	string case2();
+	string case3();
+	string case6();
 
 	string toString();
 };

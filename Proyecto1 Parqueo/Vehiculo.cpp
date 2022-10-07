@@ -46,24 +46,52 @@ void Vehiculo::realizarCobro(Hora* horaPtr, HoraS* horaSPtr) {
 		final.*/
 	if (tonelaje >= 1.0 && tonelaje <= 1.5) {
 		double n = 0;
-		n = (horaSPtr->getHoraS() - horaPtr->getHora()) * 0.05;
+		n = ((horaSPtr->getHoraS() - horaPtr->getHora()) * 800.00) * 0.05;
 		cobroPtr->setTotal(n);
 	}
 	if (tonelaje >= 1.6 && tonelaje <= 3.5) {
 		double n = 0;
-		n = (horaSPtr->getHoraS() - horaPtr->getHora()) * 0.1;
+		n = ((horaSPtr->getHoraS() - horaPtr->getHora()) * 800.00) * 0.1;
 		cobroPtr->setTotal(n);
 	}
 	if (tonelaje >= 3.6 && tonelaje <= 5.0) {
 		double n = 0;
-		n = (horaSPtr->getHoraS() - horaPtr->getHora()) * 0.15;
+		n = ((horaSPtr->getHoraS() - horaPtr->getHora()) * 800.00) * 0.15;
 		cobroPtr->setTotal(n);
 	}
 	if (tonelaje > 5.0) {
 		double n = 0;
-		n = (horaSPtr->getHoraS() - horaPtr->getHora()) * 0.25;
+		n = ((horaSPtr->getHoraS() - horaPtr->getHora()) * 800.00) * 0.25;
 		cobroPtr->setTotal(n);
 	}
+
+}
+
+string Vehiculo::case1() {
+	stringstream s;
+	s << "Placa: " << placa << endl;
+	return s.str();
+		
+}
+
+string Vehiculo::case2() {
+	stringstream s;
+	s << "Placa: " << placa << endl;
+	return s.str();
+
+}
+
+string Vehiculo::case3() {
+	stringstream s;
+	s << "Placa: " << placa << endl;
+	return s.str();
+
+}
+
+string Vehiculo::case6() {
+	stringstream s;
+	s << "Placa: " << placa << endl;
+	return s.str();
 
 }
 

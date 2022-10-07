@@ -13,12 +13,17 @@ public:
 
 	int getCant();
 	int getTam();
-	
+	InfoDelCampo* getVec(int);
+	string case1();
+	string case2();
+	string case3();
+	void case4();
+	string case6();
 
 	string toString();
 
-	void creaParqueo();
-	void creaVehiculo();
+	
+	
 
 };
 
