@@ -20,6 +20,14 @@ bool ContVehiculos::ingresaVehiculo(Vehiculo* vehiculoPtr) {
 		return false;
 }
 
+bool ContVehiculos::vehiculoPago(string pla) {
+	for (int i = 0; i < cant; i++)
+		if (vec[i]->getPlaca() == pla && vec[i]->vehiculoPago() == true)
+			return true;
+		else
+			return false;
+}
+
 string ContVehiculos::case1() {
 	stringstream s;
 	s << "-------------Lista de vehiculos-------------" << endl;
@@ -43,6 +51,19 @@ string ContVehiculos::case3() {
 	s << "-------------Lista de vehiculos-------------" << endl;
 	for (int i = 0; i < cant; i++)
 		s << vec[i]->case3() << endl;
+	return s.str();
+
+}
+
+string ContVehiculos::case5(string pla) {
+	stringstream s;
+	for (int i = 0; i < cant; i++)
+		if (vec[i]->getPlaca() == pla) {
+			vec[i]->setPago('S');
+			s << vec[i]->case5() << endl;
+		}
+		else
+			s << "No existe un vehiculo con esa placa" << endl;
 	return s.str();
 
 }

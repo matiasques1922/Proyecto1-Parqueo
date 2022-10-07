@@ -26,15 +26,12 @@ void InfoDelCampo::setContVehiculos(ContVehiculos* cPtr) { contPtr = cPtr; }
 bool InfoDelCampo::ingresaVehiculo(Vehiculo* vehiPtr) {
 		return contPtr->ingresaVehiculo(vehiPtr);
 }
-
-//bool InfoDelCampo::ingresaContenedor(ContVehiculos* contPtr) {
-//	if (cant < tam) {
-//		vec[cant++] = contPtr;
-//		return true;
-//	}
-//	else
-//		return false;
-//}
+bool InfoDelCampo::vehiculoPago(string pla) {
+	if (contPtr->vehiculoPago(pla) == true)
+		return true;
+	else
+		return false;
+}
 
 string InfoDelCampo::case1() {
 	stringstream s;
@@ -83,6 +80,12 @@ string InfoDelCampo::case3() {
 		s << " " << endl;
 		return s.str();
 	}
+}
+
+string InfoDelCampo::case5(string pla) {
+	stringstream s;
+	s << contPtr->case5(pla) << endl;
+	return s.str();
 }
 
 string InfoDelCampo::case6() {

@@ -17,6 +17,13 @@ int Parqueo::getCant() { return cant; }
 int Parqueo::getTam() { return tam; }
 InfoDelCampo* Parqueo::getVec(int i) { return vecP[i]; }
 
+void Parqueo::vehiculoPago(string pla) {
+	for (int i = 0; i < tam; i++) {
+		if (vecP[i]->vehiculoPago(pla) == true) 
+			vecP[i]->setEstado('L');
+	}
+}
+
 string Parqueo::case1() {
 	stringstream s;
 	s << "------------------PARQUEO---------------------" << endl
@@ -48,7 +55,7 @@ string Parqueo::case3() {
 }
 
 void Parqueo::case4() {
-	int hora, horaS;
+	double hora, horaS;
 	string cedula;
 	string nombre;
 	double total = 0;
@@ -62,7 +69,7 @@ void Parqueo::case4() {
 	int numeroCampo;
 	char estado = 'L';
 	char letra = 's';
-
+	char pago = 'N';
 	Hora* horaPtr;
 	HoraS* horaSPtr;
 	Chofer* chofPtr;
@@ -86,12 +93,14 @@ void Parqueo::case4() {
 				cout << "Ingresando horas... En formato de 24 horas" << endl;
 				cout << "Ingrese la hora de llegada: ";
 				cin >> hora;
-				cout << ":00" << endl;
+				cout << hora << ":00" << endl;
+				
 				horaPtr = new Hora(hora);
 				cout << endl;
 				cout << "Ingrese la hora de salida: ";
 				cin >> horaS;
-				cout << ":00" << endl;
+				cout << horaS << ":00" << endl;
+				
 				horaSPtr = new HoraS(horaS);
 				cout << endl;
 
@@ -118,9 +127,9 @@ void Parqueo::case4() {
 				cin >> color;
 				cout << endl;
 
-				vehiPtr = new Vehiculo(marca, placa, tonelaje, color, chofPtr, cobroPtr);
+				vehiPtr = new Vehiculo(marca, placa, tonelaje, color, pago, chofPtr, cobroPtr);
+				
 				vehiPtr->realizarCobro(horaPtr, horaSPtr);
-
 				vecP[j]->setContVehiculos(contPtr);
 				if (vecP[j]->ingresaVehiculo(vehiPtr)) {
 					cout << "El vehiculo se ingreso con exito" << endl << endl;
@@ -140,6 +149,13 @@ void Parqueo::case4() {
 				cin >> letra;
 			}
 		}
+}
+
+string Parqueo::case5(string pla) {
+	stringstream s;
+	for (int i = 0; i < tam; i++)
+	s << vecP[i]->case5(pla) << endl;
+	return s.str();
 }
 
 string Parqueo::case6() {

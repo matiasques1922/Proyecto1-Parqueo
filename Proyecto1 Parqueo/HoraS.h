@@ -3,14 +3,14 @@
 class HoraS
 {
 private:
-	int hora;
+	double hora;
 public:
 	HoraS();
-	HoraS(int);
+	HoraS(double);
 	virtual~HoraS();
 
-	int getHoraS();
-	void setHoraS(int);
+	double getHoraS();
+	void setHoraS(double);
 
 	string toString();
 };

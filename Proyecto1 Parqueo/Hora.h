@@ -9,14 +9,14 @@ using namespace std;
 class Hora
 {
 private:
-	int hora;
+	double hora;
 public:
 	Hora();
-	Hora(int);
+	Hora(double);
 	virtual~Hora();
 
-	int getHora();
-	void setHora(int);
+	double getHora();
+	void setHora(double);
 
 	string toString();
 };

@@ -5,14 +5,16 @@ Vehiculo::Vehiculo() {
 	placa = "indefinido";
 	tonelaje = 0;
 	color = "indefinido";
+	pago = 'N';
 	choferPtr = NULL;
 	cobroPtr = NULL;
 }
-Vehiculo::Vehiculo(string mar, string pla, double ton, string col, Chofer* cPtr, Cobro* coPtr) {
+Vehiculo::Vehiculo(string mar, string pla, double ton, string col, char pa, Chofer* cPtr, Cobro* coPtr) {
 	marca = mar;
 	placa = pla;
 	tonelaje = ton;
 	color = col;
+	pago = pa;
 	choferPtr = cPtr;
 	cobroPtr = coPtr;
 }
@@ -27,6 +29,7 @@ string Vehiculo::getMarca(){return marca; }
 string Vehiculo::getPlaca() { return placa; }
 double Vehiculo::getTonelaje() { return tonelaje; }
 string Vehiculo::getColor() { return color; }
+char Vehiculo::getPago() { return pago; }
 Chofer* Vehiculo::getChofer() { return choferPtr; }
 Cobro* Vehiculo::getCobro() { return cobroPtr; }
 
@@ -34,6 +37,7 @@ void Vehiculo::setMarca(string mar) { marca = mar; }
 void Vehiculo::setPlaca(string pla){ placa = pla; }
 void Vehiculo::setTonelaje(double ton){ tonelaje = ton; }
 void Vehiculo::setColor(string col){ color = col; }
+void Vehiculo::setPago(char pa) { pago = pa; }
 void Vehiculo::setChofer(Chofer* cPtr){ choferPtr = cPtr; }
 void Vehiculo::setCobro(Cobro* coPtr){ cobroPtr = coPtr; }
 
@@ -46,25 +50,32 @@ void Vehiculo::realizarCobro(Hora* horaPtr, HoraS* horaSPtr) {
 		final.*/
 	if (tonelaje >= 1.0 && tonelaje <= 1.5) {
 		double n = 0;
-		n = ((horaSPtr->getHoraS() - horaPtr->getHora()) * 800.00) * 0.05;
+		n = ((horaSPtr->getHoraS() - horaPtr->getHora()) * 800.00) + (((horaSPtr->getHoraS() - horaPtr->getHora()) * 800.00) * 0.05);
 		cobroPtr->setTotal(n);
 	}
 	if (tonelaje >= 1.6 && tonelaje <= 3.5) {
 		double n = 0;
-		n = ((horaSPtr->getHoraS() - horaPtr->getHora()) * 800.00) * 0.1;
+		n = ((horaSPtr->getHoraS() - horaPtr->getHora()) * 800.00) + (((horaSPtr->getHoraS() - horaPtr->getHora()) * 800.00) * 0.10);
 		cobroPtr->setTotal(n);
 	}
 	if (tonelaje >= 3.6 && tonelaje <= 5.0) {
 		double n = 0;
-		n = ((horaSPtr->getHoraS() - horaPtr->getHora()) * 800.00) * 0.15;
+		n = ((horaSPtr->getHoraS() - horaPtr->getHora()) * 800.00) + (((horaSPtr->getHoraS() - horaPtr->getHora()) * 800.00) * 0.15);
 		cobroPtr->setTotal(n);
 	}
 	if (tonelaje > 5.0) {
 		double n = 0;
-		n = ((horaSPtr->getHoraS() - horaPtr->getHora()) * 800.00) * 0.25;
+		n = ((horaSPtr->getHoraS() - horaPtr->getHora()) * 800.00) + (((horaSPtr->getHoraS() - horaPtr->getHora()) * 800.00) * 0.20);
 		cobroPtr->setTotal(n);
 	}
 
+}
+
+bool Vehiculo::vehiculoPago() {
+	if (pago == 'S')
+		return true;
+	else
+		return false;
 }
 
 string Vehiculo::case1() {
@@ -88,12 +99,20 @@ string Vehiculo::case3() {
 
 }
 
+string Vehiculo::case5() {
+	stringstream s;
+	s << cobroPtr->toString() << endl;
+	return s.str();
+}
+
 string Vehiculo::case6() {
 	stringstream s;
 	s << "Placa: " << placa << endl;
 	return s.str();
 
 }
+
+
 
 string Vehiculo::toString(){
 	stringstream s;

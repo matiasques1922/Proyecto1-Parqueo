@@ -21,11 +21,12 @@ public:
 	void setContVehiculos(ContVehiculos*);
 
 	bool ingresaVehiculo(Vehiculo*);
-	/*bool ingresaContenedor(ContVehiculos*);*/
+	bool vehiculoPago(string);
 
 	string case1();
 	string case2();
 	string case3();
+	string case5(string);
 	string case6();
 
 	

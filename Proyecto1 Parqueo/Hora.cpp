@@ -3,13 +3,13 @@
 Hora::Hora(){
 	hora = 0;
 }
-Hora::Hora(int h){
+Hora::Hora(double h){
 	hora = h;
 }
 Hora::~Hora(){}
 
-int Hora::getHora() { return hora; }
-void Hora::setHora(int h) { hora = h; }
+double Hora::getHora() { return hora; }
+void Hora::setHora(double h) { hora = h; }
 
 string Hora::toString(){
 	stringstream s;

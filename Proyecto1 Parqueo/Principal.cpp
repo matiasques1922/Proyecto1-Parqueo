@@ -6,16 +6,16 @@ using namespace std;
 
 
 int main() {
+	int op = 0;
 	string nombre;
 	string numero;
 	string direccion;
 	int tam = 0;
 	int cant = 0;
-	int op = 0;
 	char mantenimiento;
-
+	Parqueo* parqueoPtr;
 	cout << "------------Creacion del Mall y su Parqueo-----------" << endl;
-	cout << "------------------------------------------------------" << endl << endl;
+	cout << "-----------------------------------------------------" << endl << endl;
 	cout << "Ingrese el nombre del Mall: ";
 	cin >> nombre;
 	cout << "Ingrese el numero telefonico del Mall: ";
@@ -24,16 +24,16 @@ int main() {
 	cin >> direccion;
 	cout << "Ingrese el numero de campos que tendra el parqueo del Mall: ";
 	cin >> tam;
-	
-	Parqueo* parqueoPtr = new Parqueo(tam);
+
+	parqueoPtr = new Parqueo(tam);
 
 	cout << endl;
 	cout << "Se creo un parqueo con: " << tam << " campos" << endl;
 	cout << endl;
 
 	for (int i = 0; i < tam; i++) {
-		
-		parqueoPtr->getVec(i)->setNumeroCampo(i+1);
+
+		parqueoPtr->getVec(i)->setNumeroCampo(i + 1);
 		cout << "---Colocando campo numero: " << parqueoPtr->getVec(i)->getNumeroCampo() << " en mantenimiento---" << endl;
 		cout << "------------------------------------------------" << endl << endl;
 		cout << "Desea que el campo este en mantenimiento? s/n : ";
@@ -51,11 +51,6 @@ int main() {
 	}
 	system("pause");
 
-	
-		
-	
-		
-	
 	do {
 		system("cls");
 		cout << "-------------------------------------MENU----------------------------------------" << endl;
@@ -109,7 +104,11 @@ int main() {
 		}
 		case 5: {
 			system("cls");
-
+			string placa;
+			cout << "Ingrese la placa del vehiculo que va a pagar su estancia en el parqueo: ";
+			cin >> placa;
+			cout << parqueoPtr->case5(placa) << endl;
+			parqueoPtr->vehiculoPago(placa);
 			system("pause");
 			break;
 		}
@@ -181,13 +180,13 @@ int main() {
 		}
 		case 17: {
 			system("cls");
-
+			cout << parqueoPtr->toString() << endl;
 			system("pause");
 			break;
 		}
 		case 18: {
 			system("cls");
-			cout << parqueoPtr->toString() << endl;
+			
 			system("pause");
 			break;
 		}
