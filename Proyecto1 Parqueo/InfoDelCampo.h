@@ -20,12 +20,15 @@ public:
 	void setEstado(char);
 	void setContVehiculos(ContVehiculos*);
 
-	bool ingresaContenedor(Vehiculo*);
+	bool ingresaVehiculo(Vehiculo*);
+	/*bool ingresaContenedor(ContVehiculos*);*/
+
 	string case1();
 	string case2();
 	string case3();
 	string case6();
 
+	
 	string toString();
 	
 

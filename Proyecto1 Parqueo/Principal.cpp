@@ -103,7 +103,7 @@ int main() {
 		}
 		case 4: {
 			system("cls");
-			parqueoPtr->creaVehiculo();
+			parqueoPtr->case4();
 			system("pause");
 			break;
 		}

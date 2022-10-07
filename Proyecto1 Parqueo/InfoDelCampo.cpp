@@ -23,9 +23,18 @@ void InfoDelCampo::setNumeroCampo(int nC) { numeroCampo = nC; }
 void InfoDelCampo::setEstado(char e) { estado = e; }
 void InfoDelCampo::setContVehiculos(ContVehiculos* cPtr) { contPtr = cPtr; }
 
-bool InfoDelCampo::ingresaContenedor(Vehiculo* vehiPtr) {
+bool InfoDelCampo::ingresaVehiculo(Vehiculo* vehiPtr) {
 		return contPtr->ingresaVehiculo(vehiPtr);
 }
+
+//bool InfoDelCampo::ingresaContenedor(ContVehiculos* contPtr) {
+//	if (cant < tam) {
+//		vec[cant++] = contPtr;
+//		return true;
+//	}
+//	else
+//		return false;
+//}
 
 string InfoDelCampo::case1() {
 	stringstream s;
@@ -53,7 +62,7 @@ string InfoDelCampo::case2() {
 		return s.str();
 	}
 	else {
-		s << "No hay campos ocupados" << endl;
+		s << " " << endl;
 		return s.str();
 	}
 }
@@ -71,7 +80,7 @@ string InfoDelCampo::case3() {
 		return s.str();
 	}
 	else {
-		s << "No hay campos en mantenimiento" << endl;
+		s << " " << endl;
 		return s.str();
 	}
 }
@@ -89,7 +98,7 @@ string InfoDelCampo::case6() {
 		return s.str();
 	}
 	else {
-		s << "No hay campos libres" << endl;
+		s << " " << endl;
 		return s.str();
 	}
 }
