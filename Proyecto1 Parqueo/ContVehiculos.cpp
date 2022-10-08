@@ -33,27 +33,30 @@ bool ContVehiculos::vehiculoPago(string pla) {
 
 string ContVehiculos::case1() {
 	stringstream s;
-	s << "-------------Lista de vehiculos-------------" << endl;
+	s << "-------------Lista de vehiculos---------------" << endl;
 	for (int i = 0; i < cant; i++)
-		s << vec[i]->case1() << endl;
+		s << vec[i]->case1();
+		
 	return s.str();
 
 }
 
 string ContVehiculos::case2() {
 	stringstream s;
-	s << "-------------Lista de vehiculos-------------" << endl;
+	s << "-------------Lista de vehiculos---------------" << endl;
 	for (int i = 0; i < cant; i++)
-		s << vec[i]->case2() << endl;
+		s << vec[i]->case2();
+		
 	return s.str();
 
 }
 
 string ContVehiculos::case3() {
 	stringstream s;
-	s << "-------------Lista de vehiculos-------------" << endl;
+	s << "-------------Lista de vehiculos---------------" << endl;
 	for (int i = 0; i < cant; i++)
 		s << vec[i]->case3() << endl;
+		
 	return s.str();
 
 }
@@ -69,9 +72,10 @@ void ContVehiculos::case5(string pla) {
 
 string ContVehiculos::case6() {
 	stringstream s;
-	s << "-------------Lista de vehiculos-------------" << endl;
+	s << "-------------Lista de vehiculos---------------" << endl;
 	for (int i = 0; i < cant; i++)
 		s << vec[i]->case6() << endl;
+		
 	return s.str();
 
 }
@@ -124,14 +128,17 @@ void ContVehiculos::case18() {
 		if (vec[i]->getTonelaje() >= 1.0 && vec[i]->getTonelaje() <= 1.5) {
 			cout << vec[i]->toString() << endl;
 		}
+		else
+			cout << "No existen vehiculos con tonelaje entre 1.0 y 1.5 en el parqueo" << endl;
 	}
 }
 
 string ContVehiculos::toString() {
 	stringstream s;
-	s << "----------Lista De Vehiculos----------" << endl;
+	s << "---------Lista De Vehiculos-----------" << endl;
 	for (int i = 0; i < cant; i++)
 		s << vec[i]->toString() << endl;
+		
 	return s.str();
 
 }

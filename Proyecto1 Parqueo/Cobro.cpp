@@ -37,7 +37,9 @@ string Cobro::toString() {
 	s << "---------------Cobro------------------" << endl
 		<< "La hora de entrada fue: " << horaPtr->getHora() << endl
 		<< "La hora de salida fue: " << horaSPtr->getHoraS() << endl
-		<< "El cobro total es: " << total << " colones" << endl;
+		<< "El cobro total es: " << total << " colones" << endl
+		<< "--------------------------------------" << endl;
+
 	return s.str();
 } 
 

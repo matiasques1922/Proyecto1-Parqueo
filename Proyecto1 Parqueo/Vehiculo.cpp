@@ -136,10 +136,10 @@ string Vehiculo::toString(){
 		<< "Tonelaje: " << tonelaje << endl
 		<< "Color: " << color << endl;
 	if (choferPtr != NULL) {
-		s << choferPtr->toString() << endl;
+		s << choferPtr->toString();
 	}
 	if (cobroPtr != NULL) {
-		s << cobroPtr->toString() << endl;
+		s << cobroPtr->toString();
 	}
 	return s.str();
 		

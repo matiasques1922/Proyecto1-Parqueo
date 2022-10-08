@@ -30,7 +30,8 @@ int main() {
 
 	parqueoPtr = new Parqueo(tam);
 
-	cout << endl;
+	system("cls");
+
 	cout << "Se creo un parqueo con: " << tam << " campos" << endl;
 	cout << endl;
 

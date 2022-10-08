@@ -143,6 +143,7 @@ void Parqueo::case4() {
 				vehiPtr = new Vehiculo(marca, placa, tonelaje, color, pago, chofPtr, cobroPtr);
 				
 				vehiPtr->realizarCobro(horaPtr, horaSPtr);
+				contMPtr->ingresaVehiculo2(vehiPtr);
 				
 				if (vecP[j]->ingresaVehiculo(vehiPtr)) {
 					cout << "El vehiculo se ingreso con exito" << endl << endl;
@@ -264,21 +265,21 @@ void Parqueo::case13() {
 void Parqueo::case14() {
 	int campos = 1;
 	cout << "-----------------------------------------------------------------------------------------------" << endl;
+	
+	if(contMPtr->moda() != 0) {
+		cout << "El tonelaje mas usado en el parqueo es: " << contMPtr->moda() << endl;
+	}
+	else {
+		cout << "No existe un tonelaje mas usado en el parqueo" << endl;
+	}
 	for (int i = 0; i < tam; i++) {
-		if(vecP[i]->case14() != 0)
-		cout << "Campo numero: " << campos << ". Tonelaje mas usado: " << vecP[i]->case14() << endl << endl;
+		if (vecP[i]->case14() != 0)
+			cout << "Campo numero: " << campos << ". Tonelaje mas usado: " << vecP[i]->case14() << endl << endl;
 		else
 			cout << "Campo numero: " << campos << ". No existe un tonelaje mas usado en este campo" << endl << endl;
 		campos++;
 	}
-	if(contMPtr->moda() != 0) {
-		cout << "El tonelaje mas usado en el parqueo es: " << contMPtr->moda() << endl;
-		cout << "-----------------------------------------------------------------------------------------------" << endl;
-	}
-	else {
-		cout << "No existe un tonelaje mas usado en el parqueo" << endl;
-		cout << "-----------------------------------------------------------------------------------------------" << endl;
-	}
+	cout << "-----------------------------------------------------------------------------------------------" << endl;
 	}
 
 void Parqueo::case15() {
@@ -313,6 +314,7 @@ void Parqueo::case16() {
 	j = numeroCampo - 1;
 	system("cls");
 	cout << vecP[j]->toString() << endl;
+
 }
 
 void Parqueo::case18() {
