@@ -43,9 +43,7 @@ void Vehiculo::setPago(char pa) { pago = pa; }
 void Vehiculo::setChofer(Chofer* cPtr){ choferPtr = cPtr; }
 void Vehiculo::setCobro(Cobro* coPtr){ cobroPtr = coPtr; }
 
-int Vehiculo::case14() {
-	return cobroPtr->getTotal();
-}
+
 
 void Vehiculo::realizarCobro(Hora* horaPtr, HoraS* horaSPtr) {
 	/*Si el vehículo es menor de una tonelada, solo pagará las horas que estuvo en el parqueo.
@@ -125,6 +123,9 @@ int Vehiculo::case13() {
 	return cobroPtr->getTotal();
 }
 
+int Vehiculo::case14() {
+	return cobroPtr->getTotal();
+}
 
 string Vehiculo::toString(){
 	stringstream s;
