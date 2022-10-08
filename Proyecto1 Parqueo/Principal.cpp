@@ -190,7 +190,7 @@ int main() {
 		}
 		case 17: {
 			system("cls");
-			cout << parqueoPtr->toString() << endl;
+			cout << parqueoPtr->case17() << endl;
 			system("pause");
 			break;
 		}

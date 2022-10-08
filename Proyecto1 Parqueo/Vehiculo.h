@@ -42,7 +42,6 @@ public:
 	string case6();
 	double case12();
 	double case13();
-	double case14();
 
 	string toString();
 

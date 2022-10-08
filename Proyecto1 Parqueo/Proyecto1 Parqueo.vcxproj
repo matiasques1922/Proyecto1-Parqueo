@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="Chofer.cpp" />
     <ClCompile Include="Cobro.cpp" />
+    <ClCompile Include="ContModa.cpp" />
     <ClCompile Include="ContVehiculos.cpp" />
     <ClCompile Include="Hora.cpp" />
     <ClCompile Include="HoraS.cpp" />
@@ -141,6 +142,7 @@
     <ClInclude Include="Chofer.h" />
     <ClInclude Include="Cobro.h" />
     <ClInclude Include="ContVehiculos.h" />
+    <ClInclude Include="ContModa.h" />
     <ClInclude Include="Hora.h" />
     <ClInclude Include="HoraS.h" />
     <ClInclude Include="InfoDelCampo.h" />

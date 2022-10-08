@@ -6,6 +6,7 @@ Parqueo::Parqueo(int n) {
 	vecP = new InfoDelCampo * [n];
 	cant = 0;
 	tam = n;
+	contMPtr = new ContModa();
 	for (int i = 0; i < n; i++)
 		vecP[i] = new InfoDelCampo();
 }
@@ -13,6 +14,8 @@ Parqueo::~Parqueo() {
 	for (int i = 0; i < cant; i++)
 		delete vecP[i];
 	delete[] vecP;
+	if (contMPtr != NULL)
+		delete contMPtr;
 }
 
 int Parqueo::getCant() { return cant; }
@@ -86,6 +89,7 @@ void Parqueo::case4() {
 
 	//A QUE POSICION SE QUIERE INGRESAR EL VEHICULO??????
 	while (letra == 's') {
+		system("cls");
 		for (int i = 0; i < tam; i++) {
 			cout << "Campo numero: " << campos << ". Estado: " << vecP[i]->getEstado() << endl << endl;
 			campos++;
@@ -258,13 +262,24 @@ void Parqueo::case13() {
 }
 
 void Parqueo::case14() {
-	
-	cout << "-----------------------------------------------------------------------------------------" << endl;
-	for (int i = 0; i < tam; i++)
-	cout << "El tonelaje de el vehiculo que mas uso el parqueo es: " << vecP[i]->case14() << endl;
-	cout << "-----------------------------------------------------------------------------------------" << endl;
-		
-}
+	int campos = 1;
+	cout << "-----------------------------------------------------------------------------------------------" << endl;
+	for (int i = 0; i < tam; i++) {
+		if(vecP[i]->case14() != 0)
+		cout << "Campo numero: " << campos << ". Tonelaje mas usado: " << vecP[i]->case14() << endl << endl;
+		else
+			cout << "Campo numero: " << campos << ". No existe un tonelaje mas usado en este campo" << endl << endl;
+		campos++;
+	}
+	if(contMPtr->moda() != 0) {
+		cout << "El tonelaje mas usado en el parqueo es: " << contMPtr->moda() << endl;
+		cout << "-----------------------------------------------------------------------------------------------" << endl;
+	}
+	else {
+		cout << "No existe un tonelaje mas usado en el parqueo" << endl;
+		cout << "-----------------------------------------------------------------------------------------------" << endl;
+	}
+	}
 
 void Parqueo::case15() {
 	int totalOcupados = 0;
@@ -305,6 +320,12 @@ void Parqueo::case18() {
 		vecP[i]->case18();
 	}
 
+}
+
+string Parqueo::case17() {
+	stringstream s;
+	s << contMPtr->toString() << endl;
+	return s.str();
 }
 
 string Parqueo::toString() {

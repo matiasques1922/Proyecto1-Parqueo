@@ -42,6 +42,9 @@
     <ClCompile Include="HoraS.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ContModa.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Parqueo.h">
@@ -66,6 +69,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="HoraS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ContModa.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

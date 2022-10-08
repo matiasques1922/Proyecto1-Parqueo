@@ -52,6 +52,11 @@ void Vehiculo::realizarCobro(Hora* horaPtr, HoraS* horaSPtr) {
 		• Si el vehículo está entre 3.6 y 5.0 toneladas, se le cobrará un 15 % más en la factura final
 		• Si el vehículo tiene un peso mayor de 5.0 toneladas, se le cobrará un 20 % más en la factura
 		final.*/
+	if (tonelaje < 1.0 && tonelaje >= 0) {
+		double n = 0;
+		n = ((horaSPtr->getHoraS() - horaPtr->getHora()) * 800.00);
+		cobroPtr->setTotal(n);
+	}
 	if (tonelaje >= 1.0 && tonelaje <= 1.5) {
 		double n = 0;
 		n = ((horaSPtr->getHoraS() - horaPtr->getHora()) * 800.00) + (((horaSPtr->getHoraS() - horaPtr->getHora()) * 800.00) * 0.05);
@@ -121,12 +126,6 @@ double Vehiculo::case12(){
 
 double Vehiculo::case13() {
 	return cobroPtr->getTotal();
-}
-
-double Vehiculo::case14() {
-	double total = 0;
-	total = cobroPtr->getHora()->getHora() - cobroPtr->getHoraS()->getHoraS();
-	return total;
 }
 
 string Vehiculo::toString(){

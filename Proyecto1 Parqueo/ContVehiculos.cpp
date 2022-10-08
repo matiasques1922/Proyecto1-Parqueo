@@ -102,16 +102,21 @@ double ContVehiculos::case13() {
 }
 
 double ContVehiculos::case14() {
-	double masPeso;
-
+	int aux1 = 0;
+	int aux2 = 0;
+	double masUso = 0;
 	for (int i = 0; i < cant; i++) {
-		if (vec[i]->getPago() == 'S') {
-			if (vec[i]->case14() > vec[i + 1]->case14()) {
-				masPeso = vec[i]->getTonelaje();
-			}
-		}
+		for (int j = 0; j < cant; j++){
+			if (vec[i]->getTonelaje() == vec[j]->getTonelaje() && i != j)
+				aux1++;
 	}
-	return masPeso;
+		if (aux1 > aux2) {
+			aux2 = aux1;
+			masUso = vec[i]->getTonelaje();
+		}
+		aux1 = 0;
+	}
+	return masUso;
 }
 
 void ContVehiculos::case18() {

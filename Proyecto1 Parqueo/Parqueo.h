@@ -2,10 +2,12 @@
 //ROLANDO ROJAS MORALES 4-0262-0297
 #pragma once
 #include "InfoDelCampo.h"
+#include "ContModa.h"
 class Parqueo
 {
 private:
 	InfoDelCampo** vecP;
+	ContModa* contMPtr;
 	int cant;
 	int tam;
 	
@@ -35,6 +37,7 @@ public:
 	void case14();
 	void case15();
 	void case16();
+	string case17();
 	void case18();
 
 
