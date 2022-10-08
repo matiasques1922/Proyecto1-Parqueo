@@ -28,9 +28,13 @@ public:
 	string case1();
 	string case2();
 	string case3();
-	string case5(string);
+	void case5(string);
 	string case6();
 	int case11();
+	int case12();
+	int case13();
+	void case14();
+	void case18();
 
 	
 	string toString();

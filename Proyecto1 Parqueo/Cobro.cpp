@@ -34,7 +34,9 @@ void Cobro::setHoraS(HoraS* hSPtr) {
 
 string Cobro::toString() {
 	stringstream s;
-	s << "---------------Cobro------------------"<< endl
+	s << "---------------Cobro------------------" << endl
+		<< "La hora de entrada fue: " << horaPtr->getHora() << endl
+		<< "La hora de salida fue: " << horaSPtr->getHoraS() << endl
 		<< "El cobro total es: " << total << " colones" << endl;
 	return s.str();
 } 

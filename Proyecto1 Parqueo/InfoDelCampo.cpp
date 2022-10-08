@@ -78,10 +78,8 @@ string InfoDelCampo::case3() {
 	return s.str();
 }
 
-string InfoDelCampo::case5(string pla) {
-	stringstream s;
-	s << contPtr->case5(pla) << endl;
-	return s.str();
+void InfoDelCampo::case5(string pla) {
+	contPtr->case5(pla);
 }
 
 string InfoDelCampo::case6() {
@@ -103,9 +101,24 @@ int InfoDelCampo::case11() {
 	return contPtr->getCant();
 }
 
+int InfoDelCampo::case12() {
+	return contPtr->case12();
+}
+
+int InfoDelCampo::case13() {
+	return contPtr->case13();
+}
+void InfoDelCampo::case14() {
+	contPtr->case14();
+}
+
+void InfoDelCampo::case18() {
+	contPtr->case18();
+}
+
 string InfoDelCampo::toString(){
 	stringstream s;
-	s << "-----------Informacion Del Campo------------" << endl
+	s << "--------Informacion Del Campo---------" << endl
 		<< "Numero de campo: " << numeroCampo << endl
 		<< "Estado del campo: " << estado << endl;
 	if (contPtr != NULL) {

@@ -21,9 +21,13 @@ InfoDelCampo* Parqueo::getVec(int i) { return vecP[i]; }
 
 void Parqueo::vehiculoPago(string pla) {
 	for (int i = 0; i < tam; i++) {
-		if (vecP[i]->vehiculoPago(pla) == true) 
+		if (vecP[i]->vehiculoPago(pla) == true) {
 			vecP[i]->setEstado('L');
+			cout << "Su campo ahora esta libre" << endl;
+			break;
+		}
 	}
+	
 }
 
 string Parqueo::case1() {
@@ -69,6 +73,7 @@ void Parqueo::case4() {
 	int tam2;
 	int j;
 	int numeroCampo;
+	int campos = 1;
 	char estado = 'L';
 	char letra = 's';
 	char pago = 'N';
@@ -77,12 +82,14 @@ void Parqueo::case4() {
 	Chofer* chofPtr;
 	Cobro* cobroPtr;
 	Vehiculo* vehiPtr;
-	ContVehiculos* contPtr = new ContVehiculos();
+	
 
 	//A QUE POSICION SE QUIERE INGRESAR EL VEHICULO??????
 	while (letra == 's') {
-		
-			cout << "Existen " << tam << " campos" << endl << endl;
+		for (int i = 0; i < tam; i++) {
+			cout << "Campo numero: " << campos << ". Estado: " << vecP[i]->getEstado() << endl << endl;
+			campos++;
+		}
 			cout << "En que numero de campo desea estacionarse?" << endl;
 			cin >> numeroCampo;
 			j = numeroCampo - 1;
@@ -132,7 +139,7 @@ void Parqueo::case4() {
 				vehiPtr = new Vehiculo(marca, placa, tonelaje, color, pago, chofPtr, cobroPtr);
 				
 				vehiPtr->realizarCobro(horaPtr, horaSPtr);
-				vecP[j]->setContVehiculos(contPtr);
+				
 				if (vecP[j]->ingresaVehiculo(vehiPtr)) {
 					cout << "El vehiculo se ingreso con exito" << endl << endl;
 					vecP[j]->setEstado('O');
@@ -141,23 +148,22 @@ void Parqueo::case4() {
 				}
 				else
 					cout << "No se ingreso el vehiculo" << endl;
-
-				system("pause");
 			}
 			else {
 				system("cls");
-				cout << "En este campo no puede estacionarse" << endl;
+				cout << "En este campo no puede estacionarse" << endl << endl;
 				cout << "Desea intentarlo de nuevo? s/n" << endl;
 				cin >> letra;
+				campos = 1;
 			}
 		}
 }
 
-string Parqueo::case5(string pla) {
-	stringstream s;
+void Parqueo::case5(string pla) {
+
 	for (int i = 0; i < tam; i++)
-	s << vecP[i]->case5(pla) << endl;
-	return s.str();
+		vecP[i]->case5(pla);
+	
 }
 
 string Parqueo::case6() {
@@ -224,29 +230,78 @@ void Parqueo::case11() {
 	cout << "--------------------------------------------------------------------" << endl;
 }
 
-void Parqueo::case12() {
-
+int Parqueo::case12() {
+	int total = 0;
+	int aux = 0;
+	for (int i = 0; i < tam; i++) {
+		total = vecP[i]->case12() + aux;
+		aux = total;
+	}
+	return total;
 }
 
 void Parqueo::case13() {
-
+	int campos = 1;
+	int numeroCampo;
+	int j;
+	for (int i = 0; i < tam; i++) {
+		cout << "Campo numero: " << campos << endl << endl;
+		campos++;
+	}
+	cout << "De que numero de campo desea obtener el total de dinero obtenido durante el dia?" << endl;
+	cin >> numeroCampo;
+	j = numeroCampo - 1;
+	system("cls");
+	cout << "-------------------------------------------------------------------------------" << endl;
+	cout << "El dinero total ingresado el dia de hoy en el campo: "<<numeroCampo<<" es de: " << vecP[j]->case13() << " colones" << endl;
+	cout << "-------------------------------------------------------------------------------" << endl;
 }
 
 void Parqueo::case14() {
-
+	for (int i = 0; i < tam; i++)
+		vecP[i]->case14();
 }
 
 void Parqueo::case15() {
+	int totalOcupados = 0;
+	double porcentaje = 0;
+	int campos = 0;
 
+	for (int i = 0; i < tam; i++)
+		campos++;
+	
+	for (int i = 0; i < tam; i++) {
+		if (vecP[i]->getEstado() == 'O') {
+			totalOcupados++;
+		}
+	}
+	porcentaje = (100 * totalOcupados) / campos;
+	cout << "-------------------------------------------------------------------------------" << endl;
+	cout << "El porcentaje de ocupacion del parqueo en este momento es de: " << porcentaje << "%" << endl;
+	cout << "-------------------------------------------------------------------------------" << endl;
 }
 
 void Parqueo::case16() {
-
+	int campos = 1;
+	int numeroCampo;
+	int j;
+	for (int i = 0; i < tam; i++) {
+		cout << "Campo numero: " << campos << endl << endl;
+		campos++;
+	}
+	cout << "De que numero de campo desea obtener la informacion de los vehiculos que han sido ingresados?" << endl;
+	cin >> numeroCampo;
+	j = numeroCampo - 1;
+	system("cls");
+	cout << vecP[j]->toString() << endl;
 }
 
-//string Parqueo::case18() {
-//
-//}
+void Parqueo::case18() {
+	for (int i = 0; i < tam; i++) {
+		vecP[i]->case18();
+	}
+
+}
 
 string Parqueo::toString() {
 	stringstream s;

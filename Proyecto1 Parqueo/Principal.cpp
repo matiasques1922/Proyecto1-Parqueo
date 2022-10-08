@@ -111,9 +111,11 @@ int main() {
 		case 5: {
 			system("cls");
 			string placa;
+			cout << "-------------------------------------------------------------------------------" << endl;
 			cout << "Ingrese la placa del vehiculo que va a pagar su estancia en el parqueo: ";
 			cin >> placa;
-			cout << parqueoPtr->case5(placa) << endl;
+			cout << "-------------------------------------------------------------------------------" << endl;
+			parqueoPtr->case5(placa);
 			parqueoPtr->vehiculoPago(placa);
 			system("pause");
 			break;
@@ -156,7 +158,9 @@ int main() {
 		}
 		case 12: {
 			system("cls");
-			parqueoPtr->case12();
+			cout << "-------------------------------------------------------------------------------" << endl;
+			cout << "El dinero total ingresado el dia de hoy en el parqueo es de: " << parqueoPtr->case12() << " colones" << endl;
+			cout << "-------------------------------------------------------------------------------" << endl;
 			system("pause");
 			break;
 		}
@@ -192,8 +196,7 @@ int main() {
 		}
 		case 18: {
 			system("cls");
-			
-			
+			parqueoPtr->case18();
 			system("pause");
 			break;
 		}

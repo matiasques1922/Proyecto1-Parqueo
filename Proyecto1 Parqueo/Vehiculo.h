@@ -38,8 +38,11 @@ public:
 	string case1();
 	string case2();
 	string case3();
-	string case5();
+	void case5();
 	string case6();
+	int case12();
+	int case13();
+	int case14();
 
 	string toString();
 

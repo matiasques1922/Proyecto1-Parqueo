@@ -23,19 +23,19 @@ public:
 	string case2();
 	string case3();
 	void case4();
-	string case5(string);
+	void case5(string);
 	string case6();
 	void case7();
 	void case8();
 	void case9();
 	void case10();
 	void case11();
-	void case12();
+	int case12();
 	void case13();
 	void case14();
 	void case15();
 	void case16();
-	string case18();
+	void case18();
 
 
 	string toString();

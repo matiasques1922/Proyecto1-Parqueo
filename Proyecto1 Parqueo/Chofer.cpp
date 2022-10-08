@@ -20,7 +20,7 @@ void Chofer::setNombre(string nom) { nombre = nom; }
 
 string Chofer::toString(){
 	stringstream s;
-	s << "--------------Chofer-----------------" << endl
+	s << "---------------Chofer-----------------" << endl
 		<< "Nombre: " << nombre << endl
 		<< "Cedula: " << cedula << endl;
 	return s.str();
