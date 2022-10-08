@@ -115,16 +115,18 @@ string Vehiculo::case6() {
 
 }
 
-int Vehiculo::case12(){
+double Vehiculo::case12(){
 	return cobroPtr->getTotal();
 }
 
-int Vehiculo::case13() {
+double Vehiculo::case13() {
 	return cobroPtr->getTotal();
 }
 
-int Vehiculo::case14() {
-	return cobroPtr->getTotal();
+double Vehiculo::case14() {
+	double total = 0;
+	total = cobroPtr->getHora()->getHora() - cobroPtr->getHoraS()->getHoraS();
+	return total;
 }
 
 string Vehiculo::toString(){

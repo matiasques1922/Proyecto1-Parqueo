@@ -101,15 +101,15 @@ int InfoDelCampo::case11() {
 	return contPtr->getCant();
 }
 
-int InfoDelCampo::case12() {
+double InfoDelCampo::case12() {
 	return contPtr->case12();
 }
 
-int InfoDelCampo::case13() {
+double InfoDelCampo::case13() {
 	return contPtr->case13();
 }
-void InfoDelCampo::case14() {
-	contPtr->case14();
+double InfoDelCampo::case14() {
+	return contPtr->case14();
 }
 
 void InfoDelCampo::case18() {

@@ -40,9 +40,9 @@ public:
 	string case3();
 	void case5();
 	string case6();
-	int case12();
-	int case13();
-	int case14();
+	double case12();
+	double case13();
+	double case14();
 
 	string toString();
 

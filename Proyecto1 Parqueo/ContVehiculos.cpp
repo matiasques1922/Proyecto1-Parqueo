@@ -76,9 +76,9 @@ string ContVehiculos::case6() {
 
 }
 
-int ContVehiculos::case12() {
-	int total = 0;
-	int aux = 0;
+double ContVehiculos::case12() {
+	double total = 0;
+	double aux = 0;
 	
 	for (int i = 0; i < cant; i++) {
 		if (vec[i]->getPago() == 'S') {
@@ -89,7 +89,7 @@ int ContVehiculos::case12() {
 	return total;
 }
 
-int ContVehiculos::case13() {
+double ContVehiculos::case13() {
 	int total = 0;
 	int aux = 0;
 	for (int i = 0; i < cant; i++) {
@@ -101,19 +101,17 @@ int ContVehiculos::case13() {
 	return total;
 }
 
-void ContVehiculos::case14() {
+double ContVehiculos::case14() {
 	double masPeso;
 
 	for (int i = 0; i < cant; i++) {
 		if (vec[i]->getPago() == 'S') {
 			if (vec[i]->case14() > vec[i + 1]->case14()) {
 				masPeso = vec[i]->getTonelaje();
-				cout << "-----------------------------------------------------------------------------------------" << endl;
-				cout << "El tonelaje de el vehiculo que mas uso el parqueo es: " << masPeso << endl;
-				cout << "-----------------------------------------------------------------------------------------" << endl;
 			}
 		}
 	}
+	return masPeso;
 }
 
 void ContVehiculos::case18() {

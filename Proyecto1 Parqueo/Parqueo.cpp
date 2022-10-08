@@ -258,8 +258,12 @@ void Parqueo::case13() {
 }
 
 void Parqueo::case14() {
+	
+	cout << "-----------------------------------------------------------------------------------------" << endl;
 	for (int i = 0; i < tam; i++)
-		vecP[i]->case14();
+	cout << "El tonelaje de el vehiculo que mas uso el parqueo es: " << vecP[i]->case14() << endl;
+	cout << "-----------------------------------------------------------------------------------------" << endl;
+		
 }
 
 void Parqueo::case15() {

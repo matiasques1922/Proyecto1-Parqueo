@@ -31,9 +31,9 @@ public:
 	void case5(string);
 	string case6();
 	int case11();
-	int case12();
-	int case13();
-	void case14();
+	double case12();
+	double case13();
+	double case14();
 	void case18();
 
 	
