@@ -106,7 +106,7 @@ void ContVehiculos::case14() {
 
 	for (int i = 0; i < cant; i++) {
 		if (vec[i]->getPago() == 'S') {
-			if (vec[i]->case14() > vec[i + 1]->case14()) {
+			if (vec[i]->case14() > vec[i + 1]->case13()) {
 				masPeso = vec[i]->getTonelaje();
 				cout << "-----------------------------------------------------------------------------------------" << endl;
 				cout << "El tonelaje de el vehiculo que mas uso el parqueo es: " << masPeso << endl;
