@@ -1,3 +1,5 @@
+//MATIAS QUESADA VILCHEZ 1-1885-0420
+//ROLANDO ROJAS MORALES 4-0262-0297
 #include "InfoDelCampo.h"
 
 InfoDelCampo::InfoDelCampo(){
@@ -58,10 +60,7 @@ string InfoDelCampo::case2() {
 		}
 		return s.str();
 	}
-	else {
-		s << " " << endl;
-		return s.str();
-	}
+	return s.str();
 }
 
 string InfoDelCampo::case3() {
@@ -76,10 +75,7 @@ string InfoDelCampo::case3() {
 		}
 		return s.str();
 	}
-	else {
-		s << " " << endl;
-		return s.str();
-	}
+	return s.str();
 }
 
 string InfoDelCampo::case5(string pla) {
@@ -100,20 +96,20 @@ string InfoDelCampo::case6() {
 		}
 		return s.str();
 	}
-	else {
-		s << " " << endl;
-		return s.str();
-	}
+	return s.str();
 }
 
+int InfoDelCampo::case11() {
+	return contPtr->getCant();
+}
 
 string InfoDelCampo::toString(){
 	stringstream s;
-	s << "------------Informacion del campo-------------" << endl
+	s << "-----------Informacion Del Campo------------" << endl
 		<< "Numero de campo: " << numeroCampo << endl
 		<< "Estado del campo: " << estado << endl;
 	if (contPtr != NULL) {
-		s << "Vehiculos que han estado en este campo: " << endl
+		s << "Vehiculos que se han parqueado: " << endl
 			<< contPtr->toString() << endl;
 	}
 	return s.str();

@@ -1,3 +1,5 @@
+//MATIAS QUESADA VILCHEZ 1-1885-0420
+//ROLANDO ROJAS MORALES 4-0262-0297
 #include "ContVehiculos.h"
 
 ContVehiculos::ContVehiculos() {
@@ -10,6 +12,8 @@ ContVehiculos:: ~ContVehiculos() {
 	for (int i = 0; i < cant; i++)
 		delete vec[i];
 }
+
+int ContVehiculos::getCant() { return cant; }
 
 bool ContVehiculos::ingresaVehiculo(Vehiculo* vehiculoPtr) {
 	if (cant < tam) {
@@ -62,8 +66,6 @@ string ContVehiculos::case5(string pla) {
 			vec[i]->setPago('S');
 			s << vec[i]->case5() << endl;
 		}
-		else
-			s << "No existe un vehiculo con esa placa" << endl;
 	return s.str();
 
 }
@@ -79,7 +81,7 @@ string ContVehiculos::case6() {
 
 string ContVehiculos::toString() {
 	stringstream s;
-	s << "-------------Lista de vehiculos-------------" << endl;
+	s << "----------Lista De Vehiculos----------" << endl;
 	for (int i = 0; i < cant; i++)
 		s << vec[i]->toString() << endl;
 	return s.str();

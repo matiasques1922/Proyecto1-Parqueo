@@ -1,3 +1,5 @@
+//MATIAS QUESADA VILCHEZ 1-1885-0420
+//ROLANDO ROJAS MORALES 4-0262-0297
 #include "Chofer.h"
 
 Chofer::Chofer(){
@@ -18,7 +20,7 @@ void Chofer::setNombre(string nom) { nombre = nom; }
 
 string Chofer::toString(){
 	stringstream s;
-	s << "-------------Chofer--------------" << endl
+	s << "--------------Chofer-----------------" << endl
 		<< "Nombre: " << nombre << endl
 		<< "Cedula: " << cedula << endl;
 	return s.str();

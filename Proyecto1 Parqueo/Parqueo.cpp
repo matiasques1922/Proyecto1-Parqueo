@@ -1,3 +1,5 @@
+//MATIAS QUESADA VILCHEZ 1-1885-0420
+//ROLANDO ROJAS MORALES 4-0262-0297
 #include "Parqueo.h"
 
 Parqueo::Parqueo(int n) {
@@ -168,7 +170,83 @@ string Parqueo::case6() {
 	return s.str();
 }
 
+void Parqueo::case7() {
+	int cantidadDeVehiculos = 0;
+	for (int i = 0; i < tam; i++)
+		if (vecP[i]->getEstado() == 'O') {
+			cantidadDeVehiculos++;
+		}
+	cout << "--------------------------------------------------------------------" << endl;
+	cout << "En este momento existen: " << cantidadDeVehiculos << " vehiculos en el parqueo" << endl;
+	cout << "--------------------------------------------------------------------" << endl;
+}
 
+void Parqueo::case8() {
+	int cantidadDeCampos = 0;
+	for (int i = 0; i < tam; i++)
+		if (vecP[i]->getEstado() == 'L') {
+			cantidadDeCampos++;
+		}
+	cout << "--------------------------------------------------------------------" << endl;
+	cout << "En este momento existen: " << cantidadDeCampos << " campos libres en el parqueo" << endl;
+	cout << "--------------------------------------------------------------------" << endl;
+}
+
+void Parqueo::case9() {
+	int cantidadDeCampos = 0;
+	for (int i = 0; i < tam; i++)
+		if (vecP[i]->getEstado() == 'O') {
+			cantidadDeCampos++;
+		}
+	cout << "--------------------------------------------------------------------" << endl;
+	cout << "En este momento existen: " << cantidadDeCampos << " campos ocupados en el parqueo" << endl;
+	cout << "--------------------------------------------------------------------" << endl;
+}
+
+void Parqueo::case10() {
+	int cantidadDeCampos = 0;
+	for (int i = 0; i < tam; i++)
+		if (vecP[i]->getEstado() == 'M') {
+			cantidadDeCampos++;
+		}
+	cout << "--------------------------------------------------------------------" << endl;
+	cout << "En este momento existen: " << cantidadDeCampos << " campos en mantenimiento en el parqueo" << endl;
+	cout << "--------------------------------------------------------------------" << endl;
+}
+
+void Parqueo::case11() {
+	int cantidadVehiculos = 0;
+	for (int i = 0; i < tam; i++)
+		cantidadVehiculos = cantidadVehiculos + vecP[i]->case11();
+
+	cout << "--------------------------------------------------------------------" << endl;
+	cout << "Durante el dia han ingresado: " << cantidadVehiculos << " vehiculos" << endl;
+	cout << "--------------------------------------------------------------------" << endl;
+}
+
+void Parqueo::case12() {
+
+}
+
+void Parqueo::case13() {
+
+}
+
+void Parqueo::case14() {
+
+}
+
+void Parqueo::case15() {
+
+}
+
+void Parqueo::case16() {
+
+}
+
+//string Parqueo::case18() {
+//
+//}
 
 string Parqueo::toString() {
 	stringstream s;

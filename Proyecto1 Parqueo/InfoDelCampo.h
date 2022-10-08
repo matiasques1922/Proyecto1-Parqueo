@@ -1,3 +1,5 @@
+//MATIAS QUESADA VILCHEZ 1-1885-0420
+//ROLANDO ROJAS MORALES 4-0262-0297
 #pragma once
 #include "ContVehiculos.h"
 class InfoDelCampo
@@ -28,6 +30,7 @@ public:
 	string case3();
 	string case5(string);
 	string case6();
+	int case11();
 
 	
 	string toString();

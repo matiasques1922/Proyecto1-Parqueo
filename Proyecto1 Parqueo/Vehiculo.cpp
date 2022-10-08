@@ -1,3 +1,5 @@
+//MATIAS QUESADA VILCHEZ 1-1885-0420
+//ROLANDO ROJAS MORALES 4-0262-0297
 #include "Vehiculo.h"
 
 Vehiculo::Vehiculo() {
@@ -80,21 +82,21 @@ bool Vehiculo::vehiculoPago() {
 
 string Vehiculo::case1() {
 	stringstream s;
-	s << "Placa: " << placa << endl;
+	s << "Placa del vehiculo: " << placa << endl;
 	return s.str();
 		
 }
 
 string Vehiculo::case2() {
 	stringstream s;
-	s << "Placa: " << placa << endl;
+	s << "Placa del vehiculo: " << placa << endl;
 	return s.str();
 
 }
 
 string Vehiculo::case3() {
 	stringstream s;
-	s << "Placa: " << placa << endl;
+	s << "Placa del vehiculo: " << placa << endl;
 	return s.str();
 
 }
@@ -107,7 +109,7 @@ string Vehiculo::case5() {
 
 string Vehiculo::case6() {
 	stringstream s;
-	s << "Placa: " << placa << endl;
+	s << "Placa del vehiculo: " << placa << endl;
 	return s.str();
 
 }

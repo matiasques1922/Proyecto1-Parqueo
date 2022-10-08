@@ -1,3 +1,5 @@
+//MATIAS QUESADA VILCHEZ 1-1885-0420
+//ROLANDO ROJAS MORALES 4-0262-0297
 #pragma once
 #include "InfoDelCampo.h"
 class Parqueo
@@ -23,6 +25,18 @@ public:
 	void case4();
 	string case5(string);
 	string case6();
+	void case7();
+	void case8();
+	void case9();
+	void case10();
+	void case11();
+	void case12();
+	void case13();
+	void case14();
+	void case15();
+	void case16();
+	string case18();
+
 
 	string toString();
 

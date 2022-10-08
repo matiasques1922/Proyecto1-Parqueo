@@ -1,3 +1,6 @@
+//MATIAS QUESADA VILCHEZ 1-1885-0420
+//ROLANDO ROJAS MORALES 4-0262-0297
+
 #include <iostream>
 #include <sstream>
 #include"Parqueo.h"
@@ -34,6 +37,7 @@ int main() {
 	for (int i = 0; i < tam; i++) {
 
 		parqueoPtr->getVec(i)->setNumeroCampo(i + 1);
+		cout << "------------------------------------------------" << endl;
 		cout << "---Colocando campo numero: " << parqueoPtr->getVec(i)->getNumeroCampo() << " en mantenimiento---" << endl;
 		cout << "------------------------------------------------" << endl << endl;
 		cout << "Desea que el campo este en mantenimiento? s/n : ";
@@ -48,8 +52,10 @@ int main() {
 			cout << "Campo colocado como libre" << endl;
 			cout << endl;
 		}
+		system("pause");
+		system("cls");
 	}
-	system("pause");
+	
 
 	do {
 		system("cls");
@@ -120,61 +126,61 @@ int main() {
 		}
 		case 7: {
 			system("cls");
-
+			parqueoPtr->case7();
 			system("pause");
 			break;
 		}
 		case 8: {
 			system("cls");
-
+			parqueoPtr->case8();
 			system("pause");
 			break;
 		}
 		case 9: {
 			system("cls");
-
+			parqueoPtr->case9();
 			system("pause");
 			break;
 		}
 		case 10: {
 			system("cls");
-
+			parqueoPtr->case10();
 			system("pause");
 			break;
 		}
 		case 11: {
 			system("cls");
-
+			parqueoPtr->case11();
 			system("pause");
 			break;
 		}
 		case 12: {
 			system("cls");
-
+			parqueoPtr->case12();
 			system("pause");
 			break;
 		}
 		case 13: {
 			system("cls");
-
+			parqueoPtr->case13();
 			system("pause");
 			break;
 		}
 		case 14: {
 			system("cls");
-
+			parqueoPtr->case14();
 			system("pause");
 			break;
 		}
 		case 15: {
 			system("cls");
-
+			parqueoPtr->case15();
 			system("pause");
 			break;
 		}
 		case 16: {
 			system("cls");
-
+			parqueoPtr->case16();
 			system("pause");
 			break;
 		}
@@ -186,6 +192,7 @@ int main() {
 		}
 		case 18: {
 			system("cls");
+			
 			
 			system("pause");
 			break;
@@ -208,31 +215,3 @@ int main() {
 	system("pause");
 	return 0;
 }
-
-
-//while (letra == 's') {
-//	cout << "-------------INGRESANDO PERSONA---------------------" << endl;
-//	cout << endl;
-//	cout << "Ingrese su cedula...";
-//	cin >> ced;
-//	cout << "Ingrese su nombre...";
-//	cin >> nom;
-//	cout << "Ingrese su edad...";
-//	cin >> ed;
-//	per = new Persona(ced, nom, ed); 
-//
-//
-//
-//	if (CO.ingresarPersona(per)) 
-//		cout << "Si, si se pudo ingresar la persona." << endl;
-//	else
-//		cout << "No, no se pudo ingresar la persona." << endl;
-//	cout << endl;
-//	cout << "Desea seguir ingresando personas.....s/n ?...";
-//	cin >> letra;
-//}
-//
-//
-//
-//
-//cout << CO.toString() << endl;

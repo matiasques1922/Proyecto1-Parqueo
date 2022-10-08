@@ -1,3 +1,5 @@
+//MATIAS QUESADA VILCHEZ 1-1885-0420
+//ROLANDO ROJAS MORALES 4-0262-0297
 #include "Cobro.h"
 Cobro::Cobro() {
 	horaPtr = NULL;
@@ -32,7 +34,7 @@ void Cobro::setHoraS(HoraS* hSPtr) {
 
 string Cobro::toString() {
 	stringstream s;
-	s << "----------Cobro------------"<< endl
+	s << "---------------Cobro------------------"<< endl
 		<< "El cobro total es: " << total << " colones" << endl;
 	return s.str();
 } 
