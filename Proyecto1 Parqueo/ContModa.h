@@ -17,6 +17,7 @@ public:
 	int getCant();
 	bool ingresaVehiculo2(Vehiculo*);
 	double moda();
+	string tonelaje();
 
 	string toString();
 };

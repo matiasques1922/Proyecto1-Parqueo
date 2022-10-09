@@ -43,6 +43,12 @@ double ContModa::moda() {
 	return masUso;
 }
 
+string ContModa::tonelaje() {
+	stringstream s;
+		s << "Solo existe un vehiculo por lo que el tonelaje mas usado es: " << vec[0]->getTonelaje();
+		return s.str();
+}
+
 string ContModa::toString() {
 	stringstream s;
 	s << "----------Lista De Vehiculos que han pasado por el parqueo----------" << endl;

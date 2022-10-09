@@ -128,10 +128,6 @@ void ContVehiculos::case18() {
 		if (vec[i]->getTonelaje() >= 1.0 && vec[i]->getTonelaje() <= 1.5) {
 			cout << vec[i]->toString() << endl;
 		}
-		else
-			cout << "---------------------------------------------------------------" << endl;
-			cout << "No existen vehiculos con tonelaje entre 1.0 y 1.5 en el parqueo" << endl;
-			cout << "---------------------------------------------------------------" << endl;
 	}
 }
 

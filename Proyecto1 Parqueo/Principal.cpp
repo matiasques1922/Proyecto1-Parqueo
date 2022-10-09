@@ -144,7 +144,7 @@ int main() {
 					cout << "-----------Ingreso de vehiculos-----------" << endl;
 					cout << "------------------------------------------" << endl;
 					cout << endl;
-					cout << "Ingresando horas... En formato de 24 horas" << endl;
+					cout << "Ingresando horas... En formato de 24 horas(1,2,3...24)" << endl;
 					cout << "Ingrese la hora de llegada: ";
 					cin >> hora;
 					cout << hora << ":00" << endl;
