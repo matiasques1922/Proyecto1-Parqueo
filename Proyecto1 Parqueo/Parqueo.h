@@ -18,13 +18,14 @@ public:
 	int getCant();
 	int getTam();
 	InfoDelCampo* getVec(int);
+	ContModa* getCont();
 
 	void vehiculoPago(string);
 
 	string case1();
 	string case2();
 	string case3();
-	void case4();
+	/*void case4();*/
 	void case5(string);
 	string case6();
 	void case7();
@@ -36,7 +37,7 @@ public:
 	void case13();
 	void case14();
 	void case15();
-	void case16();
+	void case16(int);
 	string case17();
 	void case18();
 
